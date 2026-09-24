@@ -1,0 +1,56 @@
+.header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header .nav-links
+{
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav-links a
+{
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 1. Настраиваем контейнер с кнопками с помощью Flexbox */
+.auth-buttons {
+    display: flex;          /* Выстраиваем кнопки в один ряд */
+    align-items: center;    /* Центрируем их по вертикали */
+    gap: 15px;              /* Задаем расстояние между кнопками */
+}
+
+/* 2. Общие стили для обеих кнопок */
+.auth-buttons button {
+    padding: 10px 24px;     /* Внутренние отступы (верх/низ 10px, лево/право 24px) */
+    font-size: 15px;        /* Размер текста */
+    font-weight: 600;       /* Делаем текст жирным */
+    border-radius: 6px;     /* Скругляем углы */
+    cursor: pointer;        /* Меняем курсор на "руку" при наведении */
+    border: none;           /* Убираем стандартную рамку браузера */
+}
+
+/* 3. Индивидуальный стиль для кнопки "Log In" */
+.btn-login {
+    background-color: transparent; /* Прозрачный фон */
+    color: #111827;                /* Темный текст */
+}
+
+/* 4. Индивидуальный стиль для кнопки "Sign Up" */
+.btn-signup {
+    background-color: #111827;     /* Темно-синий (почти черный) фон */
+    color: white;                  /* Белый текст */
+}
