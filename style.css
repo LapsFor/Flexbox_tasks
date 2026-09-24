@@ -1,56 +1,225 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #1e293b;
+}
+
+/* ---------------- Header Section ---------------- */
 .header
 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    background-color: #1e293b;
 }
 
-.header .logo
-{
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-.header .nav-links
+.nav-links
 {
     display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 12px 24px;
+}
+
+.nav-links a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: #3b82f6;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo
+{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    padding: 12px 24px;
+    background-color: #3b82f6;
+    border-radius: 8px;
+}
+/* ---------------- Auth Links Section ---------------- */
+.auth-buttons
+{
+    display: flex;
+    flex-direction: row;
     gap: 20px;
 }
 
-.header .nav-links a
+.btn-login
 {
-    text-decoration: none;
-    color: #333;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+    background-color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.btn-signup
+{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+    background-color: #3b82f6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+}
+
+
+/* ---------------- Hero Section ---------------- */
+
+.hero
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    background-color: white;
+}
+
+.hero-buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.btn-start
+{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+    background-color: #3b82f6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+}
+
+.btn-curriculum
+{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    outline: none;
+    background-color: #3b82f6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* ---------------- Main Section ---------------- */
+
+/* =========================================
+   1. ОБЕРТКА ВСЕЙ СЕКЦИИ
+   ========================================= */
+.learning-paths {
+    padding: 80px 50px; /* Отступы сверху/снизу (80px) и по бокам (50px) */
+    background-color: #ffffff; /* Белый фон */
+}
+
+/* =========================================
+   2. ЗАГОЛОВОК СЕКЦИИ
+   ========================================= */
+.section-header {
+    text-align: center; /* Центрируем текст заголовка и подзаголовка */
+    margin-bottom: 50px; /* Отталкиваем контейнер с карточками вниз */
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: #111827; /* Темный цвет заголовка[cite: 1] */
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: #6b7280; /* Серый цвет для описания[cite: 1] */
     font-size: 16px;
 }
 
-/* 1. Настраиваем контейнер с кнопками с помощью Flexbox */
-.auth-buttons {
-    display: flex;          /* Выстраиваем кнопки в один ряд */
-    align-items: center;    /* Центрируем их по вертикали */
-    gap: 15px;              /* Задаем расстояние между кнопками */
+/* =========================================
+   3. КОНТЕЙНЕР ДЛЯ КАРТОЧЕК (ГЛАВНЫЙ FLEXBOX)
+   ========================================= */
+.cards-container {
+    display: flex; /* Выстраиваем три карточки в один ряд */
+    justify-content: center; /* Центрируем весь блок с карточками посередине экрана */
+    gap: 30px; /* Создаем ровные отступы по 30px между карточками */
+    flex-wrap: wrap; /* Если экран станет узким, карточки будут переноситься на новую строку, а не сжиматься в кашу */
 }
 
-/* 2. Общие стили для обеих кнопок */
-.auth-buttons button {
-    padding: 10px 24px;     /* Внутренние отступы (верх/низ 10px, лево/право 24px) */
-    font-size: 15px;        /* Размер текста */
-    font-weight: 600;       /* Делаем текст жирным */
-    border-radius: 6px;     /* Скругляем углы */
-    cursor: pointer;        /* Меняем курсор на "руку" при наведении */
-    border: none;           /* Убираем стандартную рамку браузера */
+/* =========================================
+   4. САМА КАРТОЧКА (ВНУТРЕННИЙ FLEXBOX)
+   ========================================= */
+.card {
+    background: #ffffff;
+    padding: 32px; /* Внутренние отступы в карточке */
+    border-radius: 12px; /* Скругляем углы карточки[cite: 1] */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Добавляем легкую тень для объема[cite: 1] */
+    width: 350px; /* Фиксируем ширину карточек, чтобы они были одинаковыми */
+    
+    /* Делаем саму карточку Flex-контейнером, чтобы управлять элементами внутри неё */
+    display: flex; 
+    flex-direction: column; /* Элементы внутри карточки (иконка, заголовок, текст, ссылка) идут сверху вниз */
+    align-items: flex-start; /* Выравниваем всё по левому краю */
 }
 
-/* 3. Индивидуальный стиль для кнопки "Log In" */
-.btn-login {
-    background-color: transparent; /* Прозрачный фон */
-    color: #111827;                /* Темный текст */
+/* Цветные полоски сверху карточек[cite: 1] */
+.card-red { border-top: 4px solid #ef4444; }
+.card-blue { border-top: 4px solid #3b82f6; }
+.card-green { border-top: 4px solid #10b981; }
+
+/* =========================================
+   5. СОДЕРЖИМОЕ КАРТОЧКИ
+   ========================================= */
+.card-icon {
+    font-size: 32px; /* Увеличиваем размер эмодзи */
+    margin-bottom: 20px; /* Отступ от иконки до заголовка */
 }
 
-/* 4. Индивидуальный стиль для кнопки "Sign Up" */
-.btn-signup {
-    background-color: #111827;     /* Темно-синий (почти черный) фон */
-    color: white;                  /* Белый текст */
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+/* Красим заголовки в цвет полоски[cite: 1] */
+.card-red h3 { color: #ef4444; }
+.card-blue h3 { color: #3b82f6; }
+.card-green h3 { color: #10b981; }
+
+.card p {
+    color: #6b7280; /* Серый текст описания */
+    line-height: 1.6; /* Увеличиваем межстрочный интервал для читаемости */
+    font-size: 15px;
+}
+
+/* =========================================
+   6. ССЫЛКА ВНИЗУ (СЕКРЕТНЫЙ ТРЮК FLEXBOX)
+   ========================================= */
+.card-link {
+    text-decoration: none;
+    color: #3b82f6; /* Синий цвет ссылки[cite: 1] */
+    font-weight: 600;
+    font-size: 15px;
+    
+    /* МАГИЯ FLEXBOX: 
+       Так как карточка это flex-column, 'margin-top: auto' забирает всё свободное 
+       пространство над ссылкой. Это гарантирует, что ссылка ВСЕГДА будет прижата 
+       к самому низу карточки, даже если в одной карточке текста мало, а в другой много. */
+    margin-top: auto; 
+}
+
+.card-link:hover {
+    text-decoration: underline; /* Подчеркиваем при наведении */
 }
